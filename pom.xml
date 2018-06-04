@@ -4,7 +4,7 @@
   <groupId>com.mkyong.common</groupId>
   <artifactId>SpringExample</artifactId>
   <packaging>jar</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>2.0.0-SNAPSHOT</version>
   <name>SpringExample</name>
   <url>http://maven.apache.org</url>
   
@@ -21,22 +21,54 @@
 		<groupId>org.springframework</groupId>
 		<artifactId>spring</artifactId>
 		<version>2.5.6</version>
-	</dependency>
-    
-    
+	</dependency> 
   </dependencies>
- 
+<profiles>
+	<profile>
+     <id>xyz-deploy</id>
  <distributionManagement>
     <repository>
-      <id>devops-releases</id>
-      <name>devops-releases</name>
-      <url>http://ec2-13-59-102-131.us-east-2.compute.amazonaws.com:8081/nexus/content/repositories/devops-releases</url>
+      <id>xyz-releases</id>
+      <name>xyz-releases</name>
+      <url>http://ec2-18-188-238-195.us-east-2.compute.amazonaws.com:8081/nexus/content/repositories/xyz-releases/</url>
     </repository>
     <snapshotRepository>
-      <id>devops-snapshots</id>
-      <name>devops-snapshots</name>
-      <url>http://ec2-13-59-102-131.us-east-2.compute.amazonaws.com:8081/nexus/content/repositories/devops-snapshots</url>
+      <id>xyz-snapshots</id>
+      <name>xyz-snapshots</name>
+      <url>http://ec2-18-188-238-195.us-east-2.compute.amazonaws.com:8081/nexus/content/repositories/xyz-snapshots/</url>
     </snapshotRepository>
   </distributionManagement>
-
+</profile>
+	
+<profile>
+     <id>spring-deploy</id>
+ <distributionManagement>
+    <repository>
+      <id>spring-releases</id>
+      <name>spring-releases</name>
+      <url>http://ec2-18-216-0-177.us-east-2.compute.amazonaws.com:8081/nexus/content/repositories/spring-releases/</url>
+    </repository>
+    <snapshotRepository>
+      <id>spring-snapshots</id>
+      <name>spring-snapshots</name>
+      <url>http://ec2-18-216-0-177.us-east-2.compute.amazonaws.com:8081/nexus/content/repositories/spring-snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
+</profile>
+	<profile>
+     <id>vcard-deploy</id>
+ <distributionManagement>
+    <repository>
+      <id>vcard-releases</id>
+      <name>vcard-releases</name>
+      <url>http://ec2-13-59-49-243.us-east-2.compute.amazonaws.com:8081/nexus/content/repositories/vcard-releases/</url>
+    </repository>
+    <snapshotRepository>
+      <id>vcard-snapshots</id>
+      <name>vcard-snapshots</name>
+      <url>http://ec2-13-59-49-243.us-east-2.compute.amazonaws.com:8081/nexus/content/repositories/vcard-snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
+</profile>
+  </profiles>
 </project>
