@@ -2,4 +2,4 @@
 springexample
 jhbfjh
 bsfv
-webhook enabled
+webhook enabled for pushing events
